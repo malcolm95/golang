@@ -13,50 +13,44 @@ var Questions = []models.Question{
 			{
 				Id:          1,
 				Description: "Valletta",
-				IsCorrect:   true,
 			},
 			{
 				Id:          2,
 				Description: "Imdina",
-				IsCorrect:   false,
 			},
 			{
 				Id:          3,
 				Description: "Mosta",
-				IsCorrect:   false,
 			},
 			{
 				Id:          3,
 				Description: "Birkirkara",
-				IsCorrect:   false,
 			},
 		},
+		CorrectAnswerId: 1,
 	},
 	{
 		Id:          1,
-		Description: "In which year dId the Great Siege happen in Malta?",
+		Description: "In which year did the Great Siege happen in Malta?",
 		Category:    "History",
 		Answers: []models.Answer{
 			{
 				Id:          1,
 				Description: "1560",
-				IsCorrect:   false,
 			},
 			{
 				Id:          2,
 				Description: "1635",
-				IsCorrect:   false,
 			},
 			{
 				Id:          3,
 				Description: "1497",
-				IsCorrect:   false,
 			},
 			{
-				Id:          3,
+				Id:          4,
 				Description: "1565",
-				IsCorrect:   true,
 			},
 		},
+		CorrectAnswerId: 4,
 	},
 }
