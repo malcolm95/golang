@@ -1,2 +1,6 @@
 github.com/gorilla/mux v1.8.0 h1:i40aqfkR1h2SlN9hojwV5ZA91wcXFOvkdNIeFDP5koI=
 github.com/gorilla/mux v1.8.0/go.mod h1:DVbg23sWSpFRCP0SfiEN6jmj59UnW/n46BH5rLB71So=
+github.com/malcolm95/golang v0.0.0-20211113114954-e4899aa49d84 h1:C7dQNyGGxQnkdSSPTwbCr92nWJSlw3EhKe661fBZoxY=
+github.com/malcolm95/golang v0.0.0-20211113114954-e4899aa49d84/go.mod h1:XOQb0QfQ6pGPb/A1Sdi6bjB27NnTnEpJBTJevBG69HU=
+github.com/malcolm95/golang v0.0.0-20211113120226-a6640d7ac113 h1:nB7ig2jtQOI2GyBnbLi9QZY7wfw6AVIWCIIE6hhVo98=
+github.com/malcolm95/golang v0.0.0-20211113120226-a6640d7ac113/go.mod h1:XOQb0QfQ6pGPb/A1Sdi6bjB27NnTnEpJBTJevBG69HU=
