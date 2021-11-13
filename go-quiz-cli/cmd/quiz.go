@@ -21,6 +21,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"sort"
 
 	"github.com/spf13/cobra"
 
@@ -40,33 +41,57 @@ to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		var questions = setupQuiz()
 
-		var correctScore int = 0
+		var scores []int
 
-		for _, question := range questions {
-			fmt.Println("Category:", question.Category)
-			fmt.Println("Question:", question.Description)
-			fmt.Println("--------------------------")
-			fmt.Println("Answers")
-			fmt.Println(question.Answers[0].Id, ")", question.Answers[0].Description)
-			fmt.Println(question.Answers[1].Id, ")", question.Answers[1].Description)
-			fmt.Println(question.Answers[2].Id, ")", question.Answers[2].Description)
-			fmt.Println(question.Answers[3].Id, ")", question.Answers[3].Description)
+		for {
+			var correctScore int = 0
 
-			fmt.Println("")
-			fmt.Printf("Answer: ")
+			for _, question := range questions {
+				fmt.Println("Category:", question.Category)
+				fmt.Println("Question:", question.Description)
+				fmt.Println("--------------------------")
+				fmt.Println("Answers")
+				fmt.Println(question.Answers[0].Id, question.Answers[0].Description)
+				fmt.Println(question.Answers[1].Id, question.Answers[1].Description)
+				fmt.Println(question.Answers[2].Id, question.Answers[2].Description)
+				fmt.Println(question.Answers[3].Id, question.Answers[3].Description)
 
-			var userAnswer int
-			fmt.Scanln(&userAnswer)
+				fmt.Println("")
+				fmt.Printf("Answer: ")
 
-			// if userAnswer == question.CorrectAnswerId {
-			// 	correctScore++
-			// }
+				var userAnswer int
+				fmt.Scanln(&userAnswer)
 
-			fmt.Println("\n**************************")
-			fmt.Println("")
+				if userAnswer == question.CorrectAnswerId {
+					correctScore++
+				}
+
+				fmt.Println("\n**************************")
+				fmt.Println("")
+			}
+
+			scores = append(scores, correctScore)
+			sort.Ints(scores)
+
+			var percentile float32
+
+			if len(scores) > 1 {
+				pos := sort.SearchInts(scores, correctScore)
+
+				fmt.Println("Current Position:", pos)
+
+				if pos > 0 {
+					percentile = (float32(pos) / float32(len(scores)-1)) * 100
+				} else {
+					percentile = 0
+				}
+			} else {
+				percentile = 100
+			}
+
+			fmt.Println("Your score is", correctScore, "out of", len(questions))
+			fmt.Println("You scored higher than", fmt.Sprintf("%.2f", percentile), "% of all quizzers")
 		}
-
-		fmt.Println("Your score is", correctScore, "out of", len(questions))
 	},
 }
 
