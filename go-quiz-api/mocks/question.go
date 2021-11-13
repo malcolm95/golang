@@ -4,7 +4,7 @@ import (
 	"github.com/malcolm95/golang/go-quiz-api/models"
 )
 
-var Questions = []models.Question{
+var quizQuestions = []models.Question{
 	{
 		Id:          1,
 		Description: "What is the capital city of Malta?",
