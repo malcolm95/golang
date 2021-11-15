@@ -30,7 +30,7 @@ var Questions = []models.Question{
 		CorrectAnswerId: 1,
 	},
 	{
-		Id:          1,
+		Id:          2,
 		Description: "In which year did the Great Siege happen in Malta?",
 		Category:    "History",
 		Answers: []models.Answer{
@@ -49,6 +49,78 @@ var Questions = []models.Question{
 			{
 				Id:          4,
 				Description: "1565",
+			},
+		},
+		CorrectAnswerId: 4,
+	},
+	{
+		Id:          3,
+		Description: "What is Malta's national dish?",
+		Category:    "Culture",
+		Answers: []models.Answer{
+			{
+				Id:          1,
+				Description: "Pastizzi",
+			},
+			{
+				Id:          2,
+				Description: "Rabbit stew",
+			},
+			{
+				Id:          3,
+				Description: "Minestra",
+			},
+			{
+				Id:          4,
+				Description: "Timpana",
+			},
+		},
+		CorrectAnswerId: 2,
+	},
+	{
+		Id:          4,
+		Description: "Which singer achieved Malta's highest rank in the Eurovision Song Contest?",
+		Category:    "Entertainment",
+		Answers: []models.Answer{
+			{
+				Id:          1,
+				Description: "Lynn Chircop",
+			},
+			{
+				Id:          2,
+				Description: "Mary Spiteri",
+			},
+			{
+				Id:          3,
+				Description: "Ira Losco",
+			},
+			{
+				Id:          4,
+				Description: "Destiny Chukunyere",
+			},
+		},
+		CorrectAnswerId: 3,
+	},
+	{
+		Id:          5,
+		Description: "Which Maltese football club won last year's BOV Premier League (20/21)?",
+		Category:    "Sports",
+		Answers: []models.Answer{
+			{
+				Id:          1,
+				Description: "Hibernians",
+			},
+			{
+				Id:          2,
+				Description: "Birkirkara",
+			},
+			{
+				Id:          3,
+				Description: "Valletta",
+			},
+			{
+				Id:          4,
+				Description: "Hamrun Spartans",
 			},
 		},
 		CorrectAnswerId: 4,

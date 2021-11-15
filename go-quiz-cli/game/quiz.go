@@ -15,12 +15,16 @@ type Quiz struct {
 	Scores    []int
 }
 
-func Start(quiz *Quiz) {
+func Start() {
+	// initialize new quiz
+	quiz := Quiz{}
+
 	// get questions
 	quiz.Questions = Config.GetQuizQuestions()
 
+	// play quiz rounds until player exits
 	for {
-		runPlayerRound(quiz)
+		runPlayerRound(&quiz)
 
 		var userAnswer string
 
@@ -39,10 +43,10 @@ func Start(quiz *Quiz) {
 
 			fmt.Println("Invalid answer! Please Y or N to exit the game or continue...")
 		}
-
 	}
 }
 
+// runs an iteration of the quiz for a player
 func runPlayerRound(quiz *Quiz) {
 	var playerScore int = 0
 
@@ -50,14 +54,7 @@ func runPlayerRound(quiz *Quiz) {
 	fmt.Println("")
 
 	for _, question := range quiz.Questions {
-		fmt.Println("Category:", question.Category)
-		fmt.Println("Question:", question.Description)
-		fmt.Println("--------------------------")
-		fmt.Println("Answers")
-		fmt.Println(question.Answers[0].Id, question.Answers[0].Description)
-		fmt.Println(question.Answers[1].Id, question.Answers[1].Description)
-		fmt.Println(question.Answers[2].Id, question.Answers[2].Description)
-		fmt.Println(question.Answers[3].Id, question.Answers[3].Description)
+		displayQuestion(question)
 
 		var userAnswerStr string
 		var userAnswer int
@@ -98,10 +95,12 @@ func runPlayerRound(quiz *Quiz) {
 	calculatePlayerRanking(quiz, playerScore)
 }
 
+// verifies whether the user answer is correct
 func isCorrectAnswer(userAnswer int, question Models.Question) bool {
 	return userAnswer == question.CorrectAnswerId
 }
 
+// calculates player's percentile rank based on other players' scores
 func calculatePlayerRanking(quiz *Quiz, playerScore int) {
 	var percentile float32
 
@@ -119,4 +118,16 @@ func calculatePlayerRanking(quiz *Quiz, playerScore int) {
 
 	fmt.Println("You scored", playerScore, "out of", len(quiz.Questions))
 	fmt.Println("You scored higher than", fmt.Sprintf("%.2f", percentile), "% of all other quizzers!")
+}
+
+// displays referenced question on screen
+func displayQuestion(question Models.Question) {
+	fmt.Println("Category:", question.Category)
+	fmt.Println("Question:", question.Description)
+	fmt.Println("--------------------------")
+	fmt.Println("Answers")
+	fmt.Println(question.Answers[0].Id, question.Answers[0].Description)
+	fmt.Println(question.Answers[1].Id, question.Answers[1].Description)
+	fmt.Println(question.Answers[2].Id, question.Answers[2].Description)
+	fmt.Println(question.Answers[3].Id, question.Answers[3].Description)
 }
