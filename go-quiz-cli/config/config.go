@@ -21,14 +21,13 @@ type Config struct {
 
 // return API server address
 func getServerAddress(cfg *Config) string {
-	return cfg.Server.Port + ":" + cfg.Server.Host
+	return "http://" + cfg.Server.Host + ":" + cfg.Server.Port
 }
 
 // load app config file
 func loadConfig() *Config {
 	var cfg Config
 	readConfigFile(&cfg)
-	fmt.Printf("%+v", cfg)
 
 	return &cfg
 }
@@ -55,17 +54,19 @@ func readConfigFile(cfg *Config) {
 }
 
 // retrieve quiz questions through API request and parse response
-func getQuizQuestions() []Models.Question {
+func GetQuizQuestions() []Models.Question {
 	// load config file
 	config := loadConfig()
 
 	// construct request URL
 	requestURL := getServerAddress(config)
 
+	requestRoute := "/getAllQuestions"
+
 	// construct request
 	request, err := http.NewRequest(
 		http.MethodGet,
-		requestURL,
+		requestURL+requestRoute,
 		nil,
 	)
 
