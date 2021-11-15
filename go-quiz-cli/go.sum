@@ -213,6 +213,8 @@ github.com/malcolm95/golang/go-quiz-api v0.0.0-20211110114914-43d13e652d12 h1:Ny
 github.com/malcolm95/golang/go-quiz-api v0.0.0-20211110114914-43d13e652d12/go.mod h1:sif1WNeG+OuWfjWuif6vWJYHnPOKhsDwoE79JL/rhGU=
 github.com/malcolm95/golang/go-quiz-api v0.0.0-20211113214750-d2726bed7d85 h1:jedHRMepQKQBx5eofxbXPH/Z3PKqwyyLJcKKj8U8NxQ=
 github.com/malcolm95/golang/go-quiz-api v0.0.0-20211113214750-d2726bed7d85/go.mod h1:pBUrtrck5yqYUV1eIb5P74XJYsx5t0N4P2ZADz1eSMA=
+github.com/malcolm95/golang/go-quiz-api v0.0.0-20211115203857-1de67168a350 h1:TCUS5zqebhAN2DxpO8EUqs+LHGZdGigWi/KGMuEeE34=
+github.com/malcolm95/golang/go-quiz-api v0.0.0-20211115203857-1de67168a350/go.mod h1:pBUrtrck5yqYUV1eIb5P74XJYsx5t0N4P2ZADz1eSMA=
 github.com/mattn/go-colorable v0.0.9/go.mod h1:9vuHe8Xs5qXnSaW/c/ABM9alt+Vo+STaOChaDxuIBZU=
 github.com/mattn/go-colorable v0.1.4/go.mod h1:U0ppj6V5qS13XJ6of8GYAs25YV2eR4EVcfRqFIhoBtE=
 github.com/mattn/go-colorable v0.1.6/go.mod h1:u6P/XSegPjTcexA+o6vUJrdnUu04hMope9wVRipJSqc=

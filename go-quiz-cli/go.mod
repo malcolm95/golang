@@ -3,9 +3,10 @@ module github.com/malcolm95/golang/go-quiz-cli
 go 1.17
 
 require (
-	github.com/malcolm95/golang/go-quiz-api v0.0.0-20211113214750-d2726bed7d85
+	github.com/malcolm95/golang/go-quiz-api v0.0.0-20211115203857-1de67168a350
 	github.com/spf13/cobra v1.2.1
 	github.com/spf13/viper v1.9.0
+	gopkg.in/yaml.v2 v2.4.0
 )
 
 require (
@@ -23,5 +24,4 @@ require (
 	golang.org/x/sys v0.0.0-20211113001501-0c823b97ae02 // indirect
 	golang.org/x/text v0.3.7 // indirect
 	gopkg.in/ini.v1 v1.64.0 // indirect
-	gopkg.in/yaml.v2 v2.4.0 // indirect
 )
