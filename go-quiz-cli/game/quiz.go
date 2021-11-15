@@ -67,10 +67,10 @@ func runPlayerRound(quiz *Quiz) {
 			_, err := fmt.Scanln(&userAnswerStr)
 			if err == nil {
 				// convert user input to int
-				userAnswer, convErr := strconv.Atoi(userAnswerStr)
+				userAnswer, err = strconv.Atoi(userAnswerStr)
 
 				// validate user's answer
-				if convErr == nil && userAnswer >= 1 && userAnswer <= 4 {
+				if err == nil && userAnswer >= 1 && userAnswer <= 4 {
 					break
 				}
 			}
