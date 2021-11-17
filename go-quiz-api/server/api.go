@@ -25,5 +25,4 @@ func listen(port uint32) {
 	log.Println("Server running on http://localhost:4001...")
 
 	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%d", port), r))
-
 }

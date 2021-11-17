@@ -15,7 +15,8 @@ type Route struct {
 func Load() []Route {
 	routes := [][]Route{
 		serverRoutes,
-		questionRoutes,
+		quizRoutes,
+		leaderboardRoutes,
 	}
 
 	var routesList []Route
