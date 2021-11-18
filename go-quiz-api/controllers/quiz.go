@@ -24,30 +24,23 @@ func PostQuizzerSubmission(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	quizzer := models.Quizzer{}
-	err = json.Unmarshal(body, &quizzer)
+	quizSubmission := models.QuizSubmission{}
+	err = json.Unmarshal(body, &quizSubmission)
 	if err != nil {
-		http.Error(w, "Failed to parse quizzer info!", http.StatusBadRequest)
-		return
-	}
-
-	answers := []int{}
-	err = json.Unmarshal(body, &answers)
-	if err != nil {
-		http.Error(w, "Failed to parse quizzer answers!", http.StatusBadRequest)
+		http.Error(w, "Failed to parse quiz submission!", http.StatusBadRequest)
 		return
 	}
 
 	// get next quizzer id
-	quizzer.Id = getNextQuizzerId()
+	quizSubmission.Quizzer.Id = getNextQuizzerId()
 
 	// get submission score
-	quizzer.Score = getQuizzerSubmissionScore(answers)
+	quizSubmission.Quizzer.Score = getQuizzerSubmissionScore(quizSubmission.Answers)
 
 	// return response
 	w.Header().Add("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
-	json.NewEncoder(w).Encode(quizzer)
+	json.NewEncoder(w).Encode(quizSubmission.Quizzer)
 }
 
 func getNextQuizzerId() int {

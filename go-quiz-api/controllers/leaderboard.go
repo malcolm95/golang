@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"encoding/json"
 	"fmt"
 	"net/http"
 	"sort"
@@ -17,6 +18,14 @@ func SubmitQuizzer(quizzer models.Quizzer) {
 
 	// sort leaderboard
 	sortQuizzersByScore()
+}
+
+// returns current leaderboard
+func GetLeaderboard(w http.ResponseWriter, r *http.Request) {
+	// return response
+	w.Header().Add("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	json.NewEncoder(w).Encode(mocks.Quiz.Leaderboard)
 }
 
 // get quizzer leaderboard percentile
