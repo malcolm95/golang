@@ -215,6 +215,10 @@ github.com/malcolm95/golang/go-quiz-api v0.0.0-20211113214750-d2726bed7d85 h1:je
 github.com/malcolm95/golang/go-quiz-api v0.0.0-20211113214750-d2726bed7d85/go.mod h1:pBUrtrck5yqYUV1eIb5P74XJYsx5t0N4P2ZADz1eSMA=
 github.com/malcolm95/golang/go-quiz-api v0.0.0-20211115203857-1de67168a350 h1:TCUS5zqebhAN2DxpO8EUqs+LHGZdGigWi/KGMuEeE34=
 github.com/malcolm95/golang/go-quiz-api v0.0.0-20211115203857-1de67168a350/go.mod h1:pBUrtrck5yqYUV1eIb5P74XJYsx5t0N4P2ZADz1eSMA=
+github.com/malcolm95/golang/go-quiz-api v0.0.0-20211118214831-8763139c635f h1:bWUuwGtIYvoEvERSGcN3cxUFXp71H9dxryEFujtIO4M=
+github.com/malcolm95/golang/go-quiz-api v0.0.0-20211118214831-8763139c635f/go.mod h1:pBUrtrck5yqYUV1eIb5P74XJYsx5t0N4P2ZADz1eSMA=
+github.com/malcolm95/golang/go-quiz-api v0.0.0-20211119193327-983d30c0d3ba h1:FqAzbm/S19onnGDif+pVKx1B0uyIeE1drzgQpBLI5BU=
+github.com/malcolm95/golang/go-quiz-api v0.0.0-20211119193327-983d30c0d3ba/go.mod h1:pBUrtrck5yqYUV1eIb5P74XJYsx5t0N4P2ZADz1eSMA=
 github.com/mattn/go-colorable v0.0.9/go.mod h1:9vuHe8Xs5qXnSaW/c/ABM9alt+Vo+STaOChaDxuIBZU=
 github.com/mattn/go-colorable v0.1.4/go.mod h1:U0ppj6V5qS13XJ6of8GYAs25YV2eR4EVcfRqFIhoBtE=
 github.com/mattn/go-colorable v0.1.6/go.mod h1:u6P/XSegPjTcexA+o6vUJrdnUu04hMope9wVRipJSqc=
@@ -473,6 +477,8 @@ golang.org/x/sys v0.0.0-20211112193437-faf0a1b62c6b h1:uo+9AuR+gDt/gdj+1BaLhdOHs
 golang.org/x/sys v0.0.0-20211112193437-faf0a1b62c6b/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
 golang.org/x/sys v0.0.0-20211113001501-0c823b97ae02 h1:7NCfEGl0sfUojmX78nK9pBJuUlSZWEJA/TwASvfiPLo=
 golang.org/x/sys v0.0.0-20211113001501-0c823b97ae02/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
+golang.org/x/sys v0.0.0-20211117180635-dee7805ff2e1 h1:kwrAHlwJ0DUBZwQ238v+Uod/3eZ8B2K5rYsUHBQvzmI=
+golang.org/x/sys v0.0.0-20211117180635-dee7805ff2e1/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
 golang.org/x/term v0.0.0-20201126162022-7de9c90e9dd1/go.mod h1:bj7SfCRtBDWHUb9snDiAeCFNEtKQo2Wmx5Cou7ajbmo=
 golang.org/x/text v0.0.0-20170915032832-14c0d48ead0c/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
 golang.org/x/text v0.3.0/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=

@@ -19,6 +19,8 @@ type Config struct {
 	} `yaml:"server"`
 }
 
+var ServerURL string
+
 // return API server address
 func getServerAddress(cfg *Config) string {
 	return "http://" + cfg.Server.Host + ":" + cfg.Server.Port
@@ -53,14 +55,18 @@ func readConfigFile(cfg *Config) {
 	}
 }
 
-// retrieve quiz questions through API request and parse response
-func GetQuizQuestions() []Models.Question {
+// retrieve quiz config including quiz questions
+func GetQuizConfiguration() []Models.Question {
 	// load config file
 	config := loadConfig()
 
-	// construct request URL
-	requestURL := getServerAddress(config)
+	// set API server URL
+	ServerURL = getServerAddress(config)
 
+	// construct request URL
+	requestURL := ServerURL
+
+	// set request route
 	requestRoute := "/getAllQuestions"
 
 	// construct request
@@ -71,7 +77,7 @@ func GetQuizQuestions() []Models.Question {
 	)
 
 	if err != nil {
-		processError("Request for quiz questions failed", err)
+		processError("Creation of request for quiz questions failed", err)
 	}
 
 	// add accept header
@@ -89,14 +95,9 @@ func GetQuizQuestions() []Models.Question {
 		processError("Failed to read response from quiz questions request", err)
 	}
 
-	// parse response
-	return parseQuestions(responseBytes)
-}
-
-// parse response byte array into list of quiz questions
-func parseQuestions(responseBytes []byte) []Models.Question {
 	quizQuestions := []Models.Question{}
 
+	// parse response byte array into list of quiz questions
 	if err := json.Unmarshal(responseBytes, &quizQuestions); err != nil {
 		processError("Could not unmarshal response", err)
 	}
