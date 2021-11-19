@@ -96,7 +96,7 @@ var Quiz = models.Quiz{
 				},
 				{
 					Id:          4,
-					Description: "Destiny Chukunyere",
+					Description: "Fabrizio Faniello",
 				},
 			},
 			CorrectAnswerId: 3,
@@ -125,6 +125,126 @@ var Quiz = models.Quiz{
 			},
 			CorrectAnswerId: 4,
 		},
+		{
+			Id:          6,
+			Description: "Which Robin Williams movie was filmed in Malta?",
+			Category:    "Entertainment",
+			Answers: []models.Answer{
+				{
+					Id:          1,
+					Description: "Moscow On The Hudson",
+				},
+				{
+					Id:          2,
+					Description: "Popeye",
+				},
+				{
+					Id:          3,
+					Description: "The World According To Garp",
+				},
+				{
+					Id:          4,
+					Description: "Dead Poet's Society",
+				},
+			},
+			CorrectAnswerId: 2,
+		},
+		{
+			Id:          7,
+			Description: "In which year did Malta become an indepedent country?",
+			Category:    "Entertainment",
+			Answers: []models.Answer{
+				{
+					Id:          1,
+					Description: "1974",
+				},
+				{
+					Id:          2,
+					Description: "1959",
+				},
+				{
+					Id:          3,
+					Description: "1964",
+				},
+				{
+					Id:          4,
+					Description: "1982",
+				},
+			},
+			CorrectAnswerId: 3,
+		},
+		{
+			Id:          8,
+			Description: "Which other language is Malta's other official language besides Maltese?",
+			Category:    "Culture",
+			Answers: []models.Answer{
+				{
+					Id:          1,
+					Description: "Italian",
+				},
+				{
+					Id:          2,
+					Description: "French",
+				},
+				{
+					Id:          3,
+					Description: "Arabic",
+				},
+				{
+					Id:          4,
+					Description: "English",
+				},
+			},
+			CorrectAnswerId: 4,
+		},
+		{
+			Id:          9,
+			Description: "Which symbol is found on the Maltese flag?",
+			Category:    "Culture",
+			Answers: []models.Answer{
+				{
+					Id:          1,
+					Description: "Star",
+				},
+				{
+					Id:          2,
+					Description: "Cross",
+				},
+				{
+					Id:          3,
+					Description: "Heart",
+				},
+				{
+					Id:          4,
+					Description: "Leaf",
+				},
+			},
+			CorrectAnswerId: 2,
+		},
+		{
+			Id:          10,
+			Description: "Between which two continents is Malta located?",
+			Category:    "Geography",
+			Answers: []models.Answer{
+				{
+					Id:          1,
+					Description: "Europe and Africa",
+				},
+				{
+					Id:          2,
+					Description: "Africa and Asia",
+				},
+				{
+					Id:          3,
+					Description: "Europe and Asia",
+				},
+				{
+					Id:          4,
+					Description: "Asia and Australia",
+				},
+			},
+			CorrectAnswerId: 1,
+		},
 	},
 	Leaderboard: models.Leaderboard{
 		Quizzers: []models.Quizzer{
@@ -151,12 +271,12 @@ var Quiz = models.Quiz{
 			{
 				Id:    1,
 				Name:  "Brad Pitt",
-				Score: 10,
+				Score: 7,
 			},
 			{
 				Id:    3,
 				Name:  "Tom Hardy",
-				Score: 10,
+				Score: 9,
 			},
 			{
 				Id:    7,
