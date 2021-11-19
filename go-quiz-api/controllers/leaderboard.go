@@ -22,7 +22,7 @@ func SubmitQuizzer(quizzer models.Quizzer) {
 
 // returns current leaderboard
 func GetLeaderboard(w http.ResponseWriter, r *http.Request) {
-	// return response
+	// return leaderboard
 	w.Header().Add("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(mocks.Quiz.Leaderboard)
@@ -30,12 +30,14 @@ func GetLeaderboard(w http.ResponseWriter, r *http.Request) {
 
 // get quizzer leaderboard percentile
 func GetQuizzerLeaderboardPercentile(w http.ResponseWriter, r *http.Request) {
+	// fetch quizzer score within request
 	quizzerScoreParam := r.URL.Query().Get("quizzerScore")
 	if quizzerScoreParam == "" {
 		http.Error(w, "Quizzer score not found!", http.StatusNotFound)
 		return
 	}
 
+	// parse quizzer score
 	quizzerScore, err := strconv.Atoi(quizzerScoreParam)
 	if err != nil {
 		http.Error(w, "Invalid quizzer score!", http.StatusNotFound)
@@ -52,6 +54,7 @@ func GetQuizzerLeaderboardPercentile(w http.ResponseWriter, r *http.Request) {
 			// store index of matching score
 			if quizzerScore == q.Score {
 				sameQuizzerScoreIndex = index
+				break
 			}
 		}
 
@@ -67,15 +70,15 @@ func GetQuizzerLeaderboardPercentile(w http.ResponseWriter, r *http.Request) {
 		percentile = 100
 	}
 
-	// return response
+	// return calculated percentile
 	w.Header().Add("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 	w.Write([]byte(fmt.Sprintf("%.2f", percentile)))
 }
 
+// sorts quizzers in leaderboard by score in ascending order to facilitate percentile calculations
 func sortQuizzersByScore() {
-	// sorts leaderboard quizzers by score in ascending order to facilitate percentile calculations
-	sort.SliceStable(mocks.Quiz.Leaderboard.Quizzers, func(i, j int) bool {
+	sort.SliceStable(mocks.Quiz.Leaderboard.Quizzers[:], func(i, j int) bool {
 		return mocks.Quiz.Leaderboard.Quizzers[i].Score < mocks.Quiz.Leaderboard.Quizzers[j].Score
 	})
 }

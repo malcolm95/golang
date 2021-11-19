@@ -12,6 +12,7 @@ type Route struct {
 	Handler func(http.ResponseWriter, *http.Request)
 }
 
+// load list of api routes
 func Load() []Route {
 	routes := [][]Route{
 		serverRoutes,
@@ -28,6 +29,7 @@ func Load() []Route {
 	return routesList
 }
 
+// setup routes to be handled
 func SetupRoutes(r *mux.Router) *mux.Router {
 
 	for _, route := range Load() {

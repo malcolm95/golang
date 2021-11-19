@@ -2,6 +2,7 @@ package mocks
 
 import "github.com/malcolm95/golang/go-quiz-api/models"
 
+// mock quiz object
 var Quiz = models.Quiz{
 	Questions: []models.Question{
 		{
@@ -128,49 +129,43 @@ var Quiz = models.Quiz{
 	Leaderboard: models.Leaderboard{
 		Quizzers: []models.Quizzer{
 			{
-				Id:      5,
-				Name:    "Tony",
-				Surname: "Montana",
-				Score:   2,
+				Id:    5,
+				Name:  "Tony Montana",
+				Score: 2,
 			},
 			{
-				Id:      4,
-				Name:    "Barney",
-				Surname: "Simpson",
-				Score:   2,
+				Id:    4,
+				Name:  "Barney Simpson",
+				Score: 2,
 			},
 			{
-				Id:      6,
-				Name:    "Harry",
-				Surname: "Potter",
-				Score:   4,
+				Id:    6,
+				Name:  "Harry Potter",
+				Score: 4,
 			},
 			{
-				Id:      2,
-				Name:    "Ed",
-				Surname: "Sheeran",
-				Score:   6,
+				Id:    2,
+				Name:  "Ed Sheeran",
+				Score: 6,
 			},
 			{
-				Id:      1,
-				Name:    "Brad",
-				Surname: "Pitt",
-				Score:   10,
+				Id:    1,
+				Name:  "Brad Pitt",
+				Score: 10,
 			},
 			{
-				Id:      3,
-				Name:    "Tom",
-				Surname: "Hardy",
-				Score:   10,
+				Id:    3,
+				Name:  "Tom Hardy",
+				Score: 10,
 			},
 			{
-				Id:      7,
-				Name:    "Michael",
-				Surname: "Phelps",
-				Score:   10,
+				Id:    7,
+				Name:  "Michael Phelps",
+				Score: 10,
 			},
 		},
 	},
 }
 
+// mock next quizzer Id
 var NextQuizzerId = 8
