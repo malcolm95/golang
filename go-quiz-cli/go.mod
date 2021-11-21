@@ -3,7 +3,7 @@ module github.com/malcolm95/golang/go-quiz-cli
 go 1.17
 
 require (
-	github.com/malcolm95/golang/go-quiz-api v0.0.0-20211119193327-983d30c0d3ba
+	github.com/malcolm95/golang/go-quiz-api v0.0.0-20211121214922-abc2728ea5c9
 	github.com/spf13/cobra v1.2.1
 	github.com/spf13/viper v1.9.0
 	gopkg.in/yaml.v2 v2.4.0
