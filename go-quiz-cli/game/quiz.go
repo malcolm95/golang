@@ -293,7 +293,8 @@ func displayLeaderboard(leaderboard Models.Leaderboard) {
 
 // process and display error
 func processError(message string, err error) {
-	fmt.Printf(message, "- %v", err)
+	fmt.Println(message)
+	fmt.Println(err)
 	os.Exit(2)
 }
 

@@ -36,7 +36,8 @@ func loadConfig() *Config {
 
 // process and display error
 func processError(message string, err error) {
-	fmt.Printf(message, "- %v", err)
+	fmt.Println(message)
+	fmt.Println(err)
 	os.Exit(2)
 }
 
@@ -86,7 +87,7 @@ func GetQuizConfiguration() []Models.Question {
 	// send request
 	response, err := http.DefaultClient.Do(request)
 	if err != nil {
-		processError("Request for quiz questions failed", err)
+		processError("Request for quiz questions failed - please make sure API server is running!", err)
 	}
 
 	// read response
